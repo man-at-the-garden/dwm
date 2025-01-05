@@ -62,12 +62,19 @@ static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("bookmark") },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("browser") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("dpass email") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("bookmark") },
 	{ MODKEY,                       XK_t,      spawn,          SHCMD("wksp togglew; refbar") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("wksp togglee; refbar") },
+	{ MODKEY,                       XK_y,      spawn,          SHCMD("wksp togglee; refbar") },
+	{ MODKEY,                       XK_u,      spawn,          SHCMD("dpass username") },
+
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("vpn") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dpass password") },
+
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
